@@ -21,13 +21,14 @@
               <h6 class="card-subtitle mb-2 text-muted">
                 By {{ book.author }}
               </h6>
-              <p class="card-text">{{ book.description }}</p>
               <p class="card-text">
                 <small class="text-muted">
                   Year: {{ book.year }} | Rating: {{ book.rating }}
                 </small>
               </p>
-              <a href="#" class="btn btn-primary">View Details</a>
+              <a href="/books/book/{{ book.id }}" class="btn btn-primary"
+                >View Details</a
+              >
             </div>
           </div>
         </div>
