@@ -9,9 +9,17 @@
         <strong>Year:</strong> {{ book.year }}<br />
         <strong>Rating:</strong> {{ book.rating }}
       </div>
-      <a href="{% url 'books:index' %}" class="btn btn-secondary"
-        >Back to Books</a
-      >
+      <div class="btn-group">
+        <a href="{% url 'books:index' %}" class="btn btn-secondary"
+          >Back to Books</a
+        >
+        <a href="{% url 'books:book_edit' book.id %}" class="btn btn-primary"
+          >Edit</a
+        >
+        <a href="{% url 'books:book_delete' book.id %}" class="btn btn-danger"
+          >Delete</a
+        >
+      </div>
     </div>
   </div>
 </div>
