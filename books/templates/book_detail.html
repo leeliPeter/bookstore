@@ -7,18 +7,21 @@
       <p class="card-text">{{ book.description }}</p>
       <div class="mb-3">
         <strong>Year:</strong> {{ book.year }}<br />
-        <strong>Rating:</strong> {{ book.rating }}
+        <strong>Rating:</strong> {{ book.rating }}<br />
+        <small class="text-muted">Added by: {{ book.user.username }}</small>
       </div>
       <div class="btn-group">
         <a href="{% url 'books:index' %}" class="btn btn-secondary"
           >Back to Books</a
         >
+        {% if user.is_authenticated and user == book.user %}
         <a href="{% url 'books:book_edit' book.id %}" class="btn btn-primary"
           >Edit</a
         >
         <a href="{% url 'books:book_delete' book.id %}" class="btn btn-danger"
           >Delete</a
         >
+        {% endif %}
       </div>
     </div>
   </div>

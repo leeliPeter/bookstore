@@ -25,4 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include('books.urls')),
     path('', redirect_to_books, name='home'),  # Redirect root URL to books
+    path('accounts/', include('django.contrib.auth.urls')),  # Add this line
 ]
